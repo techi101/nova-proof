@@ -1,0 +1,156 @@
+{
+ "snapshot": "2026-11-20",
+ "window_12m_from": "2025-11-20",
+ "apps": {
+  "Nova Benefits": {
+   "text_reviews_all_time": 107,
+   "oldest": "2021-03-03",
+   "last_12m_reviews": 15,
+   "last_12m_neg": 7,
+   "last_12m_neg_pct": 46.7,
+   "last_12m_neg_replied": 0,
+   "last_12m_neg_reply_pct": 0.0,
+   "last_12m_neg_theme_pct": {
+    "documents_asked_again": 14.3,
+    "claim_slow_or_no_update": 28.6,
+    "claim_rejected": 14.3,
+    "support_unreachable": 0.0,
+    "app_login_or_crash": 14.3,
+    "checkup_or_payment": 14.3,
+    "cashless_or_hospital": 14.3
+   }
+  },
+  "Plum": {
+   "text_reviews_all_time": 1796,
+   "oldest": "2022-06-03",
+   "last_12m_reviews": 790,
+   "last_12m_neg": 87,
+   "last_12m_neg_pct": 11.0,
+   "last_12m_neg_replied": 54,
+   "last_12m_neg_reply_pct": 62.1,
+   "last_12m_neg_theme_pct": {
+    "documents_asked_again": 3.4,
+    "claim_slow_or_no_update": 23.0,
+    "claim_rejected": 6.9,
+    "support_unreachable": 14.9,
+    "app_login_or_crash": 8.0,
+    "checkup_or_payment": 8.0,
+    "cashless_or_hospital": 8.0
+   }
+  },
+  "Loop Health": {
+   "text_reviews_all_time": 863,
+   "oldest": "2019-11-19",
+   "last_12m_reviews": 211,
+   "last_12m_neg": 69,
+   "last_12m_neg_pct": 32.7,
+   "last_12m_neg_replied": 55,
+   "last_12m_neg_reply_pct": 79.7,
+   "last_12m_neg_theme_pct": {
+    "documents_asked_again": 0.0,
+    "claim_slow_or_no_update": 21.7,
+    "claim_rejected": 4.3,
+    "support_unreachable": 14.5,
+    "app_login_or_crash": 11.6,
+    "checkup_or_payment": 10.1,
+    "cashless_or_hospital": 8.7
+   }
+  },
+  "Onsurity": {
+   "text_reviews_all_time": 1196,
+   "oldest": "2019-10-11",
+   "last_12m_reviews": 125,
+   "last_12m_neg": 86,
+   "last_12m_neg_pct": 68.8,
+   "last_12m_neg_replied": 8,
+   "last_12m_neg_reply_pct": 9.3,
+   "last_12m_neg_theme_pct": {
+    "documents_asked_again": 2.3,
+    "claim_slow_or_no_update": 23.3,
+    "claim_rejected": 9.3,
+    "support_unreachable": 16.3,
+    "app_login_or_crash": 16.3,
+    "checkup_or_payment": 16.3,
+    "cashless_or_hospital": 15.1
+   }
+  },
+  "Pazcare": {
+   "text_reviews_all_time": 423,
+   "oldest": "2021-08-19",
+   "last_12m_reviews": 93,
+   "last_12m_neg": 44,
+   "last_12m_neg_pct": 47.3,
+   "last_12m_neg_replied": 40,
+   "last_12m_neg_reply_pct": 90.9,
+   "last_12m_neg_theme_pct": {
+    "documents_asked_again": 0.0,
+    "claim_slow_or_no_update": 27.3,
+    "claim_rejected": 4.5,
+    "support_unreachable": 11.4,
+    "app_login_or_crash": 6.8,
+    "checkup_or_payment": 18.2,
+    "cashless_or_hospital": 2.3
+   }
+  }
+ },
+ "nova": {
+  "neg_total": 56,
+  "neg_descriptive": 44,
+  "theme_counts_descriptive_neg": {
+   "documents_asked_again": 4,
+   "claim_slow_or_no_update": 8,
+   "claim_rejected": 8,
+   "support_unreachable": 9,
+   "app_login_or_crash": 12,
+   "checkup_or_payment": 4,
+   "cashless_or_hospital": 6
+  },
+  "untagged_descriptive_neg": 7,
+  "replies_total": 5,
+  "first_reply": "2022-06-18",
+  "last_reply": "2022-07-21",
+  "neg_after_last_reply": 48,
+  "by_year": {
+   "2021": {
+    "n": 4,
+    "neg": 1,
+    "avg": 4.0
+   },
+   "2022": {
+    "n": 17,
+    "neg": 7,
+    "avg": 3.24
+   },
+   "2023": {
+    "n": 29,
+    "neg": 12,
+    "avg": 3.21
+   },
+   "2024": {
+    "n": 34,
+    "neg": 23,
+    "avg": 2.24
+   },
+   "2025": {
+    "n": 10,
+    "neg": 7,
+    "avg": 2.2
+   },
+   "2026": {
+    "n": 13,
+    "neg": 6,
+    "avg": 3.23
+   }
+  },
+  "five_star_weeks_with_3plus": {
+   "2021-03-01": 3,
+   "2022-10-24": 3,
+   "2023-03-06": 3,
+   "2023-07-17": 4,
+   "2023-07-31": 3,
+   "2024-06-24": 3,
+   "2026-02-09": 4
+  },
+  "five_star_total": 44
+ }
+}
