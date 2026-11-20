@@ -256,8 +256,8 @@ function hover(el, text){
 function render(D){
   const S = D.summary, A = S.apps, N = S.nova, R = D.report, L = R.listing, nova = A["Nova Benefits"];
   const comp = ["Plum","Loop Health","Pazcare"].map(k => A[k].last_12m_neg_reply_pct);
-  document.getElementById("h1").textContent = `Nova has not replied to a 1 to 2 star Play review since ${dt(N.last_reply)}. Plum, Loop and Pazcare answer ${Math.round(Math.min(...comp))} to ${Math.round(Math.max(...comp))}%.`;
-  document.getElementById("lede").innerHTML = `App store reviews are the one public place where employees, not HR buyers, talk about Nova. ${N.neg_after_last_reply} unhappy reviews have gone unanswered since then, while the homepage leads with "${esc(R.homepage_claim)}" and the Play listing sits at ${L["Nova Benefits"].rating}.`;
+  document.getElementById("h1").textContent = `Plum, Loop and Pazcare answer ${Math.round(Math.min(...comp))} to ${Math.round(Math.max(...comp))}% of 1 to 2 star Play reviews. Nova's last reply was ${dt(N.last_reply)}: an easy trust win.`;
+  document.getElementById("lede").innerHTML = `App store reviews are the one public place where employees, not HR buyers, talk about Nova. ${N.neg_after_last_reply} unhappy reviews since then are still open. A short public reply to each one would back up the "${esc(R.homepage_claim)}" story and help lift the ${L["Nova Benefits"].rating} Play rating that HR buyers see.`;
   document.getElementById("meta").innerHTML = [`Snapshot ${dt(S.snapshot)}`, `Last 12 months: ${dt(S.window_12m_from)} to ${dt(S.snapshot)}`, `5 apps, ${fmt(Object.values(A).reduce((a,x)=>a+x.text_reviews_all_time,0))} written Play reviews`, "Public pages only"].map(t => `<span class="chip">${t}</span>`).join("");
 
   document.getElementById("rr-hint").textContent = `Last 12 months, Google Play, share of 1 to 2 star reviews with a developer reply`;

@@ -3,7 +3,7 @@
 ![Review Benchmark demo page](docs/screenshot_1440.png)
 
 - **Problem:** app store reviews are the one public place where employees, not HR buyers, talk about Nova, and any HR buyer comparing Nova with Plum or Pazcare can read them.
-- **Result:** Nova has not replied to a 1 to 2 star Play review since 21 Jul 2022 (48 unanswered since then; 0 of 7 in the last 12 months), while Pazcare answers 91%, Loop Health 80% and Plum 62%.
+- **Result:** Pazcare answers 91% of 1 to 2 star Play reviews, Loop Health 80% and Plum 62%. Nova's last reply was 21 Jul 2022 (48 unanswered since; 0 of 7 in the last 12 months), so replying is an easy trust win.
 - **Demo page:** open `web/index.html` in a browser (no install, no server), or run `python -m http.server -d web` and visit http://localhost:8000. Mobile view: [docs/screenshot_390.png](docs/screenshot_390.png).
 
 Snapshot: 20 Nov 2026, public pages only. The full write-up, with sources, is [REPORT.md](REPORT.md).
