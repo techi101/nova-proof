@@ -1,0 +1,264 @@
+{
+ "summary": {
+  "snapshot": "2026-11-20",
+  "window_12m_from": "2025-11-20",
+  "apps": {
+   "Nova Benefits": {
+    "text_reviews_all_time": 107,
+    "oldest": "2021-03-03",
+    "last_12m_reviews": 15,
+    "last_12m_neg": 7,
+    "last_12m_neg_pct": 46.7,
+    "last_12m_neg_replied": 0,
+    "last_12m_neg_reply_pct": 0.0,
+    "last_12m_neg_theme_pct": {
+     "documents_asked_again": 14.3,
+     "claim_slow_or_no_update": 28.6,
+     "claim_rejected": 14.3,
+     "support_unreachable": 0.0,
+     "app_login_or_crash": 14.3,
+     "checkup_or_payment": 14.3,
+     "cashless_or_hospital": 14.3
+    }
+   },
+   "Plum": {
+    "text_reviews_all_time": 1796,
+    "oldest": "2022-06-03",
+    "last_12m_reviews": 790,
+    "last_12m_neg": 87,
+    "last_12m_neg_pct": 11.0,
+    "last_12m_neg_replied": 54,
+    "last_12m_neg_reply_pct": 62.1,
+    "last_12m_neg_theme_pct": {
+     "documents_asked_again": 3.4,
+     "claim_slow_or_no_update": 23.0,
+     "claim_rejected": 6.9,
+     "support_unreachable": 14.9,
+     "app_login_or_crash": 8.0,
+     "checkup_or_payment": 8.0,
+     "cashless_or_hospital": 8.0
+    }
+   },
+   "Loop Health": {
+    "text_reviews_all_time": 863,
+    "oldest": "2019-11-19",
+    "last_12m_reviews": 211,
+    "last_12m_neg": 69,
+    "last_12m_neg_pct": 32.7,
+    "last_12m_neg_replied": 55,
+    "last_12m_neg_reply_pct": 79.7,
+    "last_12m_neg_theme_pct": {
+     "documents_asked_again": 0.0,
+     "claim_slow_or_no_update": 21.7,
+     "claim_rejected": 4.3,
+     "support_unreachable": 14.5,
+     "app_login_or_crash": 11.6,
+     "checkup_or_payment": 10.1,
+     "cashless_or_hospital": 8.7
+    }
+   },
+   "Onsurity": {
+    "text_reviews_all_time": 1196,
+    "oldest": "2019-10-11",
+    "last_12m_reviews": 125,
+    "last_12m_neg": 86,
+    "last_12m_neg_pct": 68.8,
+    "last_12m_neg_replied": 8,
+    "last_12m_neg_reply_pct": 9.3,
+    "last_12m_neg_theme_pct": {
+     "documents_asked_again": 2.3,
+     "claim_slow_or_no_update": 23.3,
+     "claim_rejected": 9.3,
+     "support_unreachable": 16.3,
+     "app_login_or_crash": 16.3,
+     "checkup_or_payment": 16.3,
+     "cashless_or_hospital": 15.1
+    }
+   },
+   "Pazcare": {
+    "text_reviews_all_time": 423,
+    "oldest": "2021-08-19",
+    "last_12m_reviews": 93,
+    "last_12m_neg": 44,
+    "last_12m_neg_pct": 47.3,
+    "last_12m_neg_replied": 40,
+    "last_12m_neg_reply_pct": 90.9,
+    "last_12m_neg_theme_pct": {
+     "documents_asked_again": 0.0,
+     "claim_slow_or_no_update": 27.3,
+     "claim_rejected": 4.5,
+     "support_unreachable": 11.4,
+     "app_login_or_crash": 6.8,
+     "checkup_or_payment": 18.2,
+     "cashless_or_hospital": 2.3
+    }
+   }
+  },
+  "nova": {
+   "neg_total": 56,
+   "neg_descriptive": 44,
+   "theme_counts_descriptive_neg": {
+    "documents_asked_again": 4,
+    "claim_slow_or_no_update": 8,
+    "claim_rejected": 8,
+    "support_unreachable": 9,
+    "app_login_or_crash": 12,
+    "checkup_or_payment": 4,
+    "cashless_or_hospital": 6
+   },
+   "untagged_descriptive_neg": 7,
+   "replies_total": 5,
+   "first_reply": "2022-06-18",
+   "last_reply": "2022-07-21",
+   "neg_after_last_reply": 48,
+   "by_year": {
+    "2021": {
+     "n": 4,
+     "neg": 1,
+     "avg": 4.0
+    },
+    "2022": {
+     "n": 17,
+     "neg": 7,
+     "avg": 3.24
+    },
+    "2023": {
+     "n": 29,
+     "neg": 12,
+     "avg": 3.21
+    },
+    "2024": {
+     "n": 34,
+     "neg": 23,
+     "avg": 2.24
+    },
+    "2025": {
+     "n": 10,
+     "neg": 7,
+     "avg": 2.2
+    },
+    "2026": {
+     "n": 13,
+     "neg": 6,
+     "avg": 3.23
+    }
+   },
+   "five_star_weeks_with_3plus": {
+    "2021-03-01": 3,
+    "2022-10-24": 3,
+    "2023-03-06": 3,
+    "2023-07-17": 4,
+    "2023-07-31": 3,
+    "2024-06-24": 3,
+    "2026-02-09": 4
+   },
+   "five_star_total": 44
+  }
+ },
+ "report": {
+  "listing": {
+   "Nova Benefits": {
+    "rating": 3.29,
+    "ratings": 199,
+    "pitch": "24*7 customer support, live claims tracking; raise a claim request in 5 minutes"
+   },
+   "Plum": {
+    "rating": 4.72,
+    "ratings": 6399,
+    "pitch": "24/7 helpline, paperless processes, and personal doctor assistance"
+   },
+   "Loop Health": {
+    "rating": 4.62,
+    "ratings": 8994,
+    "pitch": "100k+ Claims Passed, 4.8/5"
+   },
+   "Pazcare": {
+    "rating": 4.58,
+    "ratings": 3817,
+    "pitch": "Compassionate, efficient claims assistance; NPS score for claims and support"
+   },
+   "Onsurity": {
+    "rating": 4.07,
+    "ratings": 7226,
+    "pitch": "Claims model: Good Doctors concierge (compare page, 7 Jul 2026)"
+   }
+  },
+  "nova_play": {
+   "installs": "50,000+",
+   "version": "2.10.6",
+   "updated": "25 Aug 2026"
+  },
+  "nova_appstore": {
+   "rating": 4.13,
+   "ratings": 45,
+   "reviews_read": 21
+  },
+  "homepage_claim": "4.7-star rating for 450+ Google Reviews",
+  "five_star_in_bursts": 23,
+  "examples": {
+   "app_login_or_crash": [
+    {
+     "date": "2024-09-09",
+     "text": "While uploading doctor papers app crash mutliple time . Spend 12+hours till now with this app but yet not able to complete my claim submission"
+    },
+    {
+     "date": "2026-06-05",
+     "text": "Keeps signing out. Cannot view scheduled doctor appointments. You cannot recover the ongoing customer support chat window if minimised.",
+     "store": "App Store"
+    }
+   ],
+   "support_unreachable": [
+    {
+     "date": "2025-05-27",
+     "text": "i tried calling them from early morning 5am till 10am not even connected to customer service in medical emergency"
+    }
+   ],
+   "claim_slow_or_no_update": [
+    {
+     "date": "2026-10-18",
+     "stars": 1,
+     "text": "After one month also my reimbursement process not yet started. Documents review also not updated."
+    }
+   ],
+   "claim_rejected": [
+    {
+     "date": "2024-08-31",
+     "text": "They will ask you to upload all the documents then ask again again same documents then in the end will cancel the reimbursement."
+    }
+   ],
+   "cashless_or_hospital": [
+    {
+     "date": "2024-06-28",
+     "text": "If hospital initiates claim, it is not reflected on app. So, then employee also initiates claim. This results in multiple claims and confusion."
+    }
+   ],
+   "documents_asked_again": [
+    {
+     "date": "2026-05-27",
+     "text": "They will ask multiple documents even after submission and not in the beginning they ask after 2 months 3 months of claim."
+    },
+    {
+     "date": "2024-11-05",
+     "text": "after raising this on twitter they finally replied me but asking for more documents",
+     "store": "App Store"
+    }
+   ],
+   "checkup_or_payment": [
+    {
+     "date": "2026-05-01",
+     "text": "constantly send messages to get annual checkup done , i paid, and no tests for scheduled. they won't refund money as well"
+    }
+   ]
+  },
+  "hand_check": "I read all 44 by hand. 2 tags are borderline (an e-card delay and a check-up technician delay counted as slow). About 4 reviews were missed, for example a step tracker bug.",
+  "alert_sample": {
+   "window": "22 Sep to 20 Nov 2026 (60 days)",
+   "new": 2,
+   "avg": 3.0,
+   "low": 1,
+   "not_replied": 1,
+   "item": "2026-10-18 1 star [claim_slow_or_no_update] Very bad experience. After one month also my reimbursement process not yet started.Documents review also not updated."
+  },
+  "tests": 11
+ }
+}

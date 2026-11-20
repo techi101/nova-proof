@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nova Review Benchmark</title>
+<meta name="description" content="Nova Benefits app reviews and developer reply rates against Plum, Loop Health, Pazcare and Onsurity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#1d4ed8; --brand-soft:#eaf0fe; --brand-ink:#1e40af;
+  --ink:#0f172a; --ink2:#334155; --muted:#64748b; --line:#e5e7eb; --soft:#f8fafc; --bg:#ffffff;
+  --neutral:#cbd5e1; --star:#f59e0b;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--brand-ink)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.bar{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+.bar .wrap{display:flex;align-items:center;gap:12px;height:56px}
+.logo{width:28px;height:28px;border-radius:7px;background:var(--brand);display:grid;place-items:center;flex:none}
+.prod{font-weight:600;white-space:nowrap}
+.prod small{color:var(--muted);font-weight:500;margin-left:6px}
+.bar nav{margin-left:auto;display:flex;gap:18px;font-size:14px}
+.bar nav a{color:var(--ink2);text-decoration:none}
+.bar nav a:hover{color:var(--brand)}
+.hero{padding:40px 0 28px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;font-size:13px;font-weight:600;color:var(--brand-ink);background:var(--brand-soft);padding:4px 10px;border-radius:999px}
+h1{font-size:34px;line-height:1.18;letter-spacing:-.02em;margin:14px 0 12px}
+.lede{font-size:17px;color:var(--ink2);margin:0 0 16px;max-width:60ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:12.5px;color:var(--ink2);border:1px solid var(--line);border-radius:999px;padding:3px 10px;background:#fff;white-space:nowrap}
+.card{border:1px solid var(--line);border-radius:12px;background:#fff;padding:16px}
+.card h3{margin:0 0 4px;font-size:15px}
+.hint{margin:0 0 14px;color:var(--muted);font-size:13px}
+.hbar{display:grid;grid-template-columns:110px 1fr 92px;gap:10px;align-items:center;margin:10px 0;font-size:13.5px}
+.hbar .t{color:var(--ink2)}
+.hbar.me .t{color:var(--ink);font-weight:600}
+.hbar .track{height:16px;position:relative}
+.hbar .fill{height:16px;border-radius:0 4px 4px 0;background:var(--neutral);min-width:3px}
+.hbar.me .fill{background:var(--brand)}
+.hbar .v{font-variant-numeric:tabular-nums;font-weight:600;text-align:right}
+.hbar .v small{color:var(--muted);font-weight:500;display:block;font-size:11.5px;line-height:1.2}
+.zero{font-size:12px;color:var(--brand-ink);font-weight:600;position:absolute;left:10px;top:0;line-height:16px}
+.foot{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--ink2)}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:8px 0 12px}
+.stat .label{font-size:13px;color:var(--muted);font-weight:500}
+.stat .value{font-size:28px;font-weight:700;letter-spacing:-.02em;margin:4px 0 2px;font-variant-numeric:tabular-nums}
+.stat .sub{font-size:12.5px;color:var(--muted)}
+.stat.hl{border-color:var(--brand);box-shadow:inset 0 0 0 1px var(--brand)}
+.stat.hl .value{color:var(--brand-ink)}
+.caveat{display:flex;gap:10px;font-size:13.5px;color:var(--ink2);background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:36px}
+.caveat i{font-style:normal;font-weight:700;color:var(--muted)}
+section{margin:0 0 40px}
+.sh{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+h2{font-size:21px;letter-spacing:-.01em;margin:0}
+.sh p{margin:4px 0 0;color:var(--muted);font-size:14px}
+/* table */
+.tw{border:1px solid var(--line);border-radius:12px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:12px;color:var(--muted);font-weight:600;padding:10px 14px;background:var(--soft);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top;font-variant-numeric:tabular-nums}
+td.r,th.r{text-align:right}
+tr.me td{background:var(--brand-soft)}
+td .app{font-weight:600;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.dot{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-size:11px;font-weight:700;color:#fff;background:#94a3b8;flex:none}
+tr.me .dot{background:var(--brand)}
+td .pitch{color:var(--ink2);font-size:13px;max-width:34ch}
+.rate{display:inline-flex;align-items:center;gap:8px;font-weight:600}
+.mini{width:56px;height:6px;background:var(--soft);border-radius:3px;overflow:hidden;display:inline-block}
+.mini i{display:block;height:6px;background:#94a3b8}
+tr.me .mini i{background:var(--brand)}
+.mcards{display:none}
+/* theme explorer */
+.explorer{display:grid;grid-template-columns:1.05fr 1fr;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.tlist{border-right:1px solid var(--line)}
+.thead{display:grid;grid-template-columns:1fr 70px;gap:10px;padding:10px 16px;background:var(--soft);font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.trow{display:grid;grid-template-columns:1fr 70px;gap:10px;align-items:center;padding:10px 16px;border:0;border-top:1px solid var(--line);cursor:pointer;width:100%;background:#fff;border-left:3px solid transparent;font:inherit;text-align:left;color:inherit}
+.trow:hover{background:#f8faff}
+.trow[aria-pressed=true]{background:var(--brand-soft);border-left-color:var(--brand)}
+.trow .n{font-size:14px;font-weight:500}
+.trow .track{height:6px;margin-top:6px}
+.trow .fill{height:6px;border-radius:0 3px 3px 0;background:var(--brand);min-width:2px}
+.trow .num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;font-size:14px}
+.trow .num small{color:var(--muted);font-weight:500}
+.detail{padding:20px}
+.detail h3{font-size:18px;margin:0 0 6px}
+.kv{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}
+.kv span{font-size:12.5px;background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:5px 9px;color:var(--ink2)}
+.kv b{color:var(--ink)}
+.quote{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.quote p{margin:0 0 8px;font-size:14.5px}
+.qm{font-size:12.5px;color:var(--muted)}
+.empty{color:var(--muted);font-size:14px}
+/* heatmap */
+.heat td{text-align:center;font-size:13px;padding:9px 6px}
+.heat th{text-align:center;padding:9px 6px}
+.heat th:first-child,.heat td:first-child{text-align:left;padding-left:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.heat .sm{display:none}
+.alert pre{margin:0;background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:12.5px;white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--ink2)}
+.ab{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:6px 0 12px}
+.ab div{font-size:12.5px;color:var(--muted)}
+.ab b{display:block;font-size:22px;color:var(--ink);font-variant-numeric:tabular-nums}
+.years{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;align-items:end;height:130px;border-bottom:1px solid var(--line);margin-top:8px}
+.yc{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.yc .v{font-size:12.5px;font-weight:600;margin-bottom:4px}
+.yc .b{width:100%;max-width:40px;background:#9db5f3;border-radius:4px 4px 0 0}
+.yl{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;font-size:11.5px;color:var(--muted);text-align:center;margin-top:6px}
+.yl b{display:block;color:var(--ink2);font-weight:500}
+#tip{position:fixed;pointer-events:none;background:var(--ink);color:#fff;font-size:12.5px;padding:6px 9px;border-radius:6px;opacity:0;transition:opacity .1s;z-index:20;max-width:260px}
+.next{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.next .card b{display:block;margin-bottom:6px}
+.next .card p{margin:0 0 10px;color:var(--ink2);font-size:14px}
+.next .k{font-size:12px;color:var(--brand-ink);font-weight:600;margin-bottom:8px;display:block}
+.next .m{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px;margin:0}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:13px}
+footer ul{margin:6px 0 0;padding-left:18px}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:0 4px}
+@media (max-width:1000px){
+  .hero{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stats .stat.hl{grid-column:1/-1;order:-1}
+  .grid2,.explorer{grid-template-columns:1fr}
+  .next{grid-template-columns:1fr 1fr}
+  .tlist{border-right:0;border-bottom:1px solid var(--line)}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .bar nav{display:none}
+  .prod small{display:none}
+  h1{font-size:26px}
+  .lede{font-size:15.5px}
+  .next{grid-template-columns:1fr}
+  .hbar{grid-template-columns:92px 1fr 80px;gap:8px}
+  .bench .tw{display:none}
+  .mcards{display:grid;gap:10px}
+  .mc{border:1px solid var(--line);border-radius:12px;padding:14px}
+  .mc.me{border-color:var(--brand);background:var(--brand-soft)}
+  .mc .app{font-weight:600;display:flex;gap:8px;align-items:center;margin-bottom:8px}
+  .mc dl{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin:0}
+  .mc dt{font-size:12px;color:var(--muted)}
+  .mc dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums}
+  .mc .pitch{font-size:13px;color:var(--ink2);margin-top:10px}
+  .ab{grid-template-columns:1fr 1fr}
+  .detail{padding:16px}
+  .heat{table-layout:fixed}
+  .heat td,.heat th{font-size:11.5px;padding:8px 2px;letter-spacing:0}
+  .heat th:first-child{width:32%}
+  .heat td:first-child,.heat th:first-child{padding-left:10px}
+  .heat .lg{display:none} .heat .sm{display:inline}
+}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap">
+  <div class="logo"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 12V8M6 12V4M10 12V6M14 12V2" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+  <div class="prod">Review Benchmark <small>Nova Benefits vs 4 group health apps</small></div>
+  <nav><a href="#bench">Competitors</a><a href="#themes">Complaints</a><a href="#alert">Weekly alert</a><a href="#next">What to do</a></nav>
+</div></div>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <span class="eyebrow">App review intelligence · Google Play, India</span>
+      <h1 id="h1"></h1>
+      <p class="lede" id="lede"></p>
+      <div class="meta" id="meta"></div>
+    </div>
+    <div class="card">
+      <h3>Developer reply rate on 1 to 2 star reviews</h3>
+      <p class="hint" id="rr-hint"></p>
+      <div id="rr"></div>
+      <div class="foot">The three apps with the best store ratings also answer most of their unhappy reviews.</div>
+    </div>
+  </div>
+
+  <div class="stats" id="stats"></div>
+  <div class="caveat"><i>i</i><div id="cav"></div></div>
+
+  <section id="bench" class="bench">
+    <div class="sh"><div><h2>Competitor benchmark</h2><p>Every competitor sells the claims experience. Store numbers from Google Play, pitch from each company's own site, 20 Nov 2026.</p></div></div>
+    <div class="tw"><table><thead><tr><th>App</th><th>Pitch on own site</th><th class="r">Play rating</th><th class="r">Reviews, 12 mo</th><th class="r">1-2 star share</th><th class="r">1-2 star replied</th><th>Reply rate</th></tr></thead><tbody id="bench-rows"></tbody></table></div>
+    <div class="mcards" id="bench-cards"></div>
+  </section>
+
+  <section id="themes">
+    <div class="sh"><div><h2>What Nova's unhappy reviewers are about</h2><p id="th-sub"></p></div></div>
+    <div class="explorer">
+      <div class="tlist" id="tlist"></div>
+      <div class="detail" id="detail" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><div><h2>Same themes across the market</h2><p>Share of each app's 1 to 2 star reviews in the last 12 months that hit the theme. Darker = larger share.</p></div></div>
+    <div class="tw"><table class="heat"><thead id="heat-head"></thead><tbody id="heat-rows"></tbody></table></div>
+    <p class="hint" style="margin-top:8px" id="heat-note"></p>
+  </section>
+
+  <section>
+    <div class="grid2">
+      <div class="card">
+        <h3>Nova's average Play rating by year</h3>
+        <p class="hint">Written reviews only, with the number of reviews each year</p>
+        <div class="years" id="years"></div>
+        <div class="yl" id="yl"></div>
+        <div class="foot" id="burst"></div>
+      </div>
+      <div class="card alert" id="alert">
+        <h3>review_alert.py, sample run</h3>
+        <p class="hint" id="al-hint"></p>
+        <div class="ab" id="ab"></div>
+        <pre id="al-item"></pre>
+        <div class="foot">Exit code 1 means "something needs a reply", so it can run on a scheduler and post to Slack or email. <span id="al-tests"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="next">
+    <div class="sh"><div><h2>What I'd do next</h2><p>Cheap first, then the fixes that need ops and the insurer side.</p></div></div>
+    <div class="next">
+      <div class="card"><span class="k">1 · This week</span><b>Answer every 1 to 2 star review within 2 working days</b><p>Start with the 18 Oct 2026 one. It costs almost nothing and turns silence into proof of the "24*7 support" promise.</p><p class="m">Watch: reply rate (now 0%) and the rating trend</p></div>
+      <div class="card"><span class="k">2 · Claims ops</span><b>One complete document list per claim</b><p>"Documents asked again" is the theme that turns a slow claim into a rejected one. Needs the insurer or TPA side too.</p><p class="m">Watch: times documents are requested per claim; aim for one</p></div>
+      <div class="card"><span class="k">3 · App</span><b>Fix sign-out and lost-chat bugs first</b><p>The biggest theme (12 of 44). A user who loses the support chat is the user who writes the review.</p><p class="m">Watch: login and crash reviews per month</p></div>
+      <div class="card"><span class="k">4 · Process</span><b>Run the weekly alert</b><p>Reviews reach ops without anyone opening the store console, and every unreplied one is listed.</p><p class="m">Watch: unreplied 1 to 2 star reviews each week</p></div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <b style="color:var(--ink2)">Method and limits</b>
+  <ul id="limits"></ul>
+  <p style="margin-top:12px">Code: <code>fetch.py</code>, <code>appstore.py</code>, <code>themes.py</code> (keyword rules), <code>analyze.py</code>, <code>review_alert.py</code>. Data on this page: <code>web/data.json</code>, built by <code>web/export.py</code> from <code>data/summary.json</code>; store listings, site pitches and quotes from <code>REPORT.md</code>.</p>
+</div></footer>
+<div id="tip" role="tooltip"></div>
+
+<script src="data.js"></script>
+<script>
+const THEME = {app_login_or_crash:"App login, sign out, crash", support_unreachable:"Could not reach support", claim_slow_or_no_update:"Claim slow or no update",
+  claim_rejected:"Claim rejected", cashless_or_hospital:"Cashless or hospital", documents_asked_again:"Documents asked again", checkup_or_payment:"Paid check-ups, refunds"};
+const SHORT = {"Nova Benefits":"Nova", "Plum":"Plum", "Loop Health":"Loop", "Onsurity":"Ons.", "Pazcare":"Paz."};
+const ORDER = ["Pazcare","Loop Health","Plum","Onsurity","Nova Benefits"];
+const fmt = n => Number(n).toLocaleString("en-US");
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const dt = s => { const [y,m,d] = s.split("-"); return `${+d} ${MON[m-1]} ${y}`; };
+const ini = n => n.split(" ").map(w => w[0]).join("").slice(0,2);
+const tip = document.getElementById("tip");
+function hover(el, text){
+  el.addEventListener("mousemove", e => { tip.textContent = text; tip.style.opacity = 1; tip.style.left = Math.min(e.clientX + 12, innerWidth - 270) + "px"; tip.style.top = (e.clientY + 14) + "px"; });
+  el.addEventListener("mouseleave", () => tip.style.opacity = 0);
+}
+
+function render(D){
+  const S = D.summary, A = S.apps, N = S.nova, R = D.report, L = R.listing, nova = A["Nova Benefits"];
+  const comp = ["Plum","Loop Health","Pazcare"].map(k => A[k].last_12m_neg_reply_pct);
+  document.getElementById("h1").textContent = `Nova has not replied to a 1 to 2 star Play review since ${dt(N.last_reply)}. Plum, Loop and Pazcare answer ${Math.round(Math.min(...comp))} to ${Math.round(Math.max(...comp))}%.`;
+  document.getElementById("lede").innerHTML = `App store reviews are the one public place where employees, not HR buyers, talk about Nova. ${N.neg_after_last_reply} unhappy reviews have gone unanswered since then, while the homepage leads with "${esc(R.homepage_claim)}" and the Play listing sits at ${L["Nova Benefits"].rating}.`;
+  document.getElementById("meta").innerHTML = [`Snapshot ${dt(S.snapshot)}`, `Last 12 months: ${dt(S.window_12m_from)} to ${dt(S.snapshot)}`, `5 apps, ${fmt(Object.values(A).reduce((a,x)=>a+x.text_reviews_all_time,0))} written Play reviews`, "Public pages only"].map(t => `<span class="chip">${t}</span>`).join("");
+
+  document.getElementById("rr-hint").textContent = `Last 12 months, Google Play, share of 1 to 2 star reviews with a developer reply`;
+  const rr = document.getElementById("rr");
+  rr.innerHTML = ORDER.map(k => { const a = A[k], me = k==="Nova Benefits";
+    return `<div class="hbar${me?" me":""}" data-t="${k}: ${a.last_12m_neg_replied} of ${a.last_12m_neg} replied (${a.last_12m_neg_reply_pct}%)"><span class="t">${k}</span><div class="track">${a.last_12m_neg_reply_pct>0?`<div class="fill" style="width:${a.last_12m_neg_reply_pct}%"></div>`:`<span class="zero">no replies</span>`}</div><span class="v">${Math.round(a.last_12m_neg_reply_pct)}%<small>${a.last_12m_neg_replied} of ${a.last_12m_neg}</small></span></div>`; }).join("");
+  rr.querySelectorAll(".hbar").forEach(b => hover(b, b.dataset.t));
+
+  const compReviews = Object.entries(A).filter(([k]) => k!=="Nova Benefits").reduce((a,[,x]) => a + x.text_reviews_all_time, 0);
+  document.getElementById("stats").innerHTML = [
+    {label:"Nova reply rate, 1-2 star, 12 months", value:`${nova.last_12m_neg_reply_pct}%`, sub:`${nova.last_12m_neg_replied} of ${nova.last_12m_neg}; competitors 9% to 91%`, hl:true},
+    {label:"Unhappy reviews with no reply", value:N.neg_after_last_reply, sub:`1-2 star reviews since the last reply on ${dt(N.last_reply)}`},
+    {label:"Play rating", value:`${L["Nova Benefits"].rating}★`, sub:`${L["Nova Benefits"].ratings} ratings; competitors ${L.Onsurity.rating} to ${L.Plum.rating}`},
+    {label:"Replies ever posted on Play", value:N.replies_total, sub:`all between ${dt(N.first_reply)} and ${dt(N.last_reply)}`},
+    {label:"Written reviews read", value:fmt(nova.text_reviews_all_time), sub:`Nova, all time; plus ${fmt(compReviews)} for 4 competitors`},
+  ].map(s => `<div class="card stat${s.hl?" hl":""}"><div class="label">${s.label}</div><div class="value">${s.value}</div><div class="sub">${s.sub}</div></div>`).join("");
+  document.getElementById("cav").innerHTML = `Small sample warning: Nova has ${nova.text_reviews_all_time} written Play reviews in total and ${nova.last_12m_reviews} in the last 12 months (${nova.last_12m_neg} at 1 to 2 stars). Treat Nova percentages as direction, not precision. Nova's users are employees of client companies, so few of them review. The reply check sees only replies on the store page; Nova may contact users by email or phone.`;
+
+  // benchmark
+  const rows = ORDER.slice().reverse();
+  document.getElementById("bench-rows").innerHTML = rows.map(k => { const a = A[k], l = L[k], me = k==="Nova Benefits";
+    return `<tr class="${me?"me":""}"><td><span class="app"><span class="dot">${ini(k)}</span>${k}</span></td><td><div class="pitch">"${esc(l.pitch)}"</div></td><td class="r"><b>${l.rating}</b><br><span style="color:var(--muted);font-size:12.5px">${fmt(l.ratings)} ratings</span></td><td class="r">${fmt(a.last_12m_reviews)}</td><td class="r">${a.last_12m_neg_pct}%</td><td class="r">${a.last_12m_neg_replied} of ${a.last_12m_neg}</td><td><span class="rate"><span class="mini"><i style="width:${a.last_12m_neg_reply_pct}%"></i></span>${Math.round(a.last_12m_neg_reply_pct)}%</span></td></tr>`; }).join("");
+  document.getElementById("bench-cards").innerHTML = rows.map(k => { const a = A[k], l = L[k], me = k==="Nova Benefits";
+    return `<div class="mc${me?" me":""}"><div class="app"><span class="dot" style="${me?"background:var(--brand)":""}">${ini(k)}</span>${k}</div><dl><dt>Reply rate, 1-2 star</dt><dd>${Math.round(a.last_12m_neg_reply_pct)}% <span style="color:var(--muted);font-weight:500">(${a.last_12m_neg_replied} of ${a.last_12m_neg})</span></dd><dt>Play rating</dt><dd>${l.rating} <span style="color:var(--muted);font-weight:500">(${fmt(l.ratings)})</span></dd><dt>Reviews, 12 mo</dt><dd>${fmt(a.last_12m_reviews)}</dd><dt>1-2 star share</dt><dd>${a.last_12m_neg_pct}%</dd></dl><div class="pitch">"${esc(l.pitch)}"</div></div>`; }).join("");
+
+  // themes
+  const TC = N.theme_counts_descriptive_neg, ks = Object.keys(TC).sort((a,b) => TC[b] - TC[a]), max = TC[ks[0]];
+  document.getElementById("th-sub").textContent = `${N.neg_descriptive} of Nova's ${N.neg_total} one and two star Play reviews (all years) have six or more words. Keyword rules tagged them; a review can have several themes; ${N.untagged_descriptive_neg} matched none. Click a theme for verbatim reviews.`;
+  let sel = ks[0];
+  document.getElementById("tlist").innerHTML = `<div class="thead"><span>Theme</span><span style="text-align:right">Of ${N.neg_descriptive}</span></div>` +
+    ks.map(k => `<button class="trow" data-k="${k}"><span><span class="n">${THEME[k]}</span><div class="track"><div class="fill" style="width:${(TC[k]/max*100).toFixed(1)}%"></div></div></span><span class="num">${TC[k]}</span></button>`).join("");
+  function showTheme(){
+    document.querySelectorAll(".trow").forEach(r => r.setAttribute("aria-pressed", r.dataset.k===sel));
+    const q = R.examples[sel] || [];
+    const comps = "Competitors, 12 mo: " + ["Plum","Loop Health","Onsurity","Pazcare"].map(k => `${k} ${A[k].last_12m_neg_theme_pct[sel]}%`).join(", ");
+    document.getElementById("detail").innerHTML = `<h3>${THEME[sel]}</h3><div class="kv"><span><b>${TC[sel]}</b> of ${N.neg_descriptive} Nova reviews, all years</span><span>Last 12 months: Nova <b>${A["Nova Benefits"].last_12m_neg_theme_pct[sel]}%</b> of ${nova.last_12m_neg}</span><span>${comps}</span></div>` +
+      (q.length ? q.map(x => `<div class="quote"><p>“${esc(x.text)}”</p><div class="qm">${x.stars?x.stars+" star · ":""}${dt(x.date)} · ${x.store||"Google Play"}</div></div>`).join("") : `<p class="empty">No quote recorded for this theme.</p>`);
+  }
+  document.getElementById("tlist").addEventListener("click", e => { const r = e.target.closest(".trow"); if (r){ sel = r.dataset.k; showTheme(); } });
+  showTheme();
+
+  // heatmap
+  const apps = ["Nova Benefits","Plum","Loop Health","Onsurity","Pazcare"];
+  document.getElementById("heat-head").innerHTML = `<tr><th>Theme</th>${apps.map(a => `<th><span class="lg">${a==="Nova Benefits"?"Nova":a}</span><span class="sm">${SHORT[a]}</span><br><span style="font-weight:500;text-transform:none;letter-spacing:0">n=${A[a].last_12m_neg}</span></th>`).join("")}</tr>`;
+  const hmax = Math.max(...apps.flatMap(a => Object.values(A[a].last_12m_neg_theme_pct)));
+  document.getElementById("heat-rows").innerHTML = Object.keys(THEME).map(k => `<tr><td>${THEME[k]}</td>${apps.map(a => { const v = A[a].last_12m_neg_theme_pct[k], t = v/hmax;
+    return `<td style="background:rgba(29,78,216,${(0.06 + t*0.74).toFixed(2)});color:${t>0.55?"#fff":"var(--ink)"}">${v}%</td>`; }).join("")}</tr>`).join("");
+  document.getElementById("heat-note").textContent = `Nova's column rests on ${nova.last_12m_neg} reviews, so one review moves a cell by about 14 points. "Documents asked again" is rare everywhere else: Plum 3 of 87, Onsurity 2 of 86, Loop and Pazcare 0.`;
+
+  // years
+  const Y = N.by_year, yk = Object.keys(Y);
+  const yh = document.getElementById("years");
+  yh.innerHTML = yk.map(y => `<div class="yc" data-t="${y}: average ${Y[y].avg} stars from ${Y[y].n} reviews, ${Y[y].neg} at 1 to 2 stars"><span class="v">${Y[y].avg.toFixed(1)}</span><div class="b" style="height:${(Y[y].avg/5*80).toFixed(1)}%"></div></div>`).join("");
+  yh.querySelectorAll(".yc").forEach(c => hover(c, c.dataset.t));
+  document.getElementById("yl").innerHTML = yk.map(y => `<span><b>${y}</b>n=${Y[y].n}</span>`).join("");
+  const wk = Object.keys(N.five_star_weeks_with_3plus);
+  document.getElementById("burst").innerHTML = `<b>Happy reviews come in bursts:</b> ${R.five_star_in_bursts} of ${N.five_star_total} five-star reviews fall in ${wk.length} weeks that each have 3 or more (e.g. ${N.five_star_weeks_with_3plus["2026-02-09"]} in the week of ${dt("2026-02-09")}). It looks like a review request after a good claim, which is a good habit.`;
+
+  // alert
+  const AS = R.alert_sample;
+  document.getElementById("al-hint").textContent = `On the saved Nova data, ${AS.window}. Live use: python review_alert.py --app com.novabenefits --days 7`;
+  document.getElementById("ab").innerHTML = `<div><b>${AS.new}</b>new reviews</div><div><b>${AS.avg.toFixed(1)}</b>average stars</div><div><b>${AS.low}</b>at 1 to 2 stars</div><div><b>${AS.not_replied}</b>not replied</div>`;
+  document.getElementById("al-item").textContent = "Reply to these:\n- " + AS.item;
+  document.getElementById("al-tests").textContent = `${R.tests} tests pass, no network.`;
+
+  document.getElementById("limits").innerHTML = [
+    `Google Play com.novabenefits (India, English): all ${nova.text_reviews_all_time} written reviews, ${dt(nova.oldest)} to 4 Nov 2026. Listing ${L["Nova Benefits"].rating} stars, ${L["Nova Benefits"].ratings} ratings, ${R.nova_play.installs} installs.`,
+    `App Store (India): ${R.nova_appstore.reviews_read} newest reviews from the public feed; listing ${R.nova_appstore.rating} stars from ${R.nova_appstore.ratings} ratings. Used for quotes only.`,
+    `Competitors: every written Play review the store returned: Plum ${fmt(A.Plum.text_reviews_all_time)}, Loop Health ${fmt(A["Loop Health"].text_reviews_all_time)}, Onsurity ${fmt(A.Onsurity.text_reviews_all_time)}, Pazcare ${fmt(A.Pazcare.text_reviews_all_time)}.`,
+    `Theme tags are keyword rules, hand-checked on Nova only. ${R.hand_check}`,
+    "Play reviews are a small, self-selected sample: employees' own accounts, not claim records. A new fetch will give slightly different numbers."
+  ].map(t => `<li>${esc(t)}</li>`).join("");
+}
+if (location.protocol.startsWith("http")) fetch("data.json").then(r => r.json()).then(render).catch(() => render(window.DATA));
+else render(window.DATA);
+</script>
+</body>
+</html>
